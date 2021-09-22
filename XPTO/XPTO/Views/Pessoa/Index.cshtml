@@ -1,0 +1,67 @@
+﻿@model IEnumerable<XPTO.Models.Pessoa>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@if(TempData["Sucesso"] != null){
+    <br />
+<div class="alert alert-success" role="alert">
+    @TempData["Sucesso"].ToString()
+</div>
+}
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sobrenome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CPF)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataNascimento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Idade)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MaiorDeIdade)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Nome)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Sobrenome)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.CPF)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DataNascimento)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Idade)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.MaiorDeIdade)
+    </td>
+    <td>
+     
+    </td>
+</tr>
+}
+
+</table>
